@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <title>I'm in a React app</title>
+    <style>
+        ul {
+            background: #fff345;
+        }
+    </style>
 </head>
 
 <body>
@@ -12,6 +17,12 @@
     <script src="https://cdn.jsdelivr.net/react/0.14.0-rc1/react.js"></script>
     <script src="https://cdn.jsdelivr.net/react/0.14.0-rc1/react-dom.js"></script>
     <script>
+         var contacts = [
+            { key: 1, name: "James K Nelson", email: "james@jamesknelson.com", description: "Front-end Unicorn" },
+            { key: 2, name: "Jim", email: "jim@example.com", description: "Front-end Unicorn" },
+            { key: 3, name: "Joe", email: "b@example.com", description: "rb" },
+        ]
+        
         var ContactItem = React.createClass({
             propTypes: {
                 name: React.PropTypes.string.isRequired,
@@ -52,21 +63,11 @@
                             placeholder: 'Description',
                             value: this.props.contact.description,
                         }),
-                        React.createElement('submit', { type: 'submit' }, 'Add Contact')
+                        React.createElement('button', { type: 'submit' }, 'Add Contact')
                     )
                 )
             }
         });
-
-        var contacts = [
-            { key: 1, name: "James K Nelson", email: "james@jamesknelson.com", description: "Front-end Unicorn" },
-            { key: 2, name: "Jim", email: "jim@example.com", description: "Front-end Unicorn" },
-            { key: 3, name: "Joe", email: "b@example.com", description: "rb" },
-        ]
-
-        var newContact = {
-            
-        }
 
         var listElements = contacts
             .filter(function (contact) {
